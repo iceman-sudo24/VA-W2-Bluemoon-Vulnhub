@@ -46,14 +46,19 @@ gobuster dir -u http://<IP> -w /usr/share/wordlists/dirb/common.txt
 ```USER: userftp```
 ```PASSWORD: ftpp@assword```
 
+### FTP Enumeration
 - FTP access was made with:
 ```bash
 ftp 192.168.56.101
 ```
-- Where the login credentials were used to successfully enter the system
+- Where the login credentials were used to successfully enter the FTP session
 - ```ls``` was used to check the file system that revealed two files:
   - information.txt
   - p_lists.txt
+- ```exit``` was used to close the FTP session
+
+### File Analysis
+- 
 
 
 
