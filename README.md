@@ -58,7 +58,11 @@ ftp 192.168.56.101
 - ```exit``` was used to close the FTP session
 
 ### File Analysis
-- 
+- ```cat``` was used to display information in both files
+- information.txt
+  - wewewe
+- p_lists.txt
+  - 
 
 
 
