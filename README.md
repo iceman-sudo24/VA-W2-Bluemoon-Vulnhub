@@ -43,8 +43,8 @@ gobuster dir -u http://<IP> -w /usr/share/wordlists/dirb/common.txt
 - The result revealed a /hidden_text directory with a 200 OK Status
 - Adding the directory to the target IP in the browser revealed a page with text displaying "Maintanance! Sorry For Delay. We Will Recover Soon" along with blue clickable text "Thank you..."
 - Clicking on the "Thank you..." led to another page with a QR code that after analysis provided the logins:
-> USER: userftp 
-> PASSWORD: ftpp@assword
+```USER: userftp```
+```PASSWORD: ftpp@assword```
 
 - FTP access was made with:
 ```bash
