@@ -14,4 +14,12 @@ Personal Note: This apparently only works with VirtualBox; couldn't find the Blu
 ```bash
 ifconfig
 ```
+- Attacker IP: 192.168.56.102
 
+- The Target's IP was found with a network scan using the command
+```bash
+nmap -sn 192.168.56.0/24
+```
+- 
+
+## 2. 
