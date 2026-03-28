@@ -5,7 +5,7 @@
 - Author: Kirthik-
 - OS: Linux/Debian
 
-Personal Note: This apparently only works with VirtualBox; couldn't find the Bluemoon IP on VMWare or other VM software (struggled with that for a bit)
+**Personal Note:** This apparently only works with VirtualBox; couldn't find the Bluemoon IP on VMWare or other VM software (struggled with that for a bit)
 
 ## Tools Used (In KaliLinux)
 - Nmap, Dirb, Gobuster, Hydra, Docker
@@ -34,7 +34,8 @@ nmap -sC -sV -p- 192.168.56.101
 - Port 80 | Service: http | Version: Apache httpd 2.4.38 ((Debian))
 
 ## 3. Gaining Access: Web Enumeration
-- The target IP was entered into the browser 192.168.56.101 where a page with the text "-- Welcome -- Are You Ready To Play With Me .....!" and a image with the text "The Game Begins".
+- The target IP was entered into the browser 192.168.56.101 where a page with the text **"-- Welcome -- Are You Ready To Play With Me .....!"** and a image with the text **"The Game Begins"**.
+
 
 
 
