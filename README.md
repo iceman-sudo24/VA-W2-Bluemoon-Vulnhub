@@ -53,22 +53,22 @@ ftp 192.168.56.101
 ```
 - Where the login credentials were used to successfully enter the FTP session
 - ```ls``` was used to check the file system that revealed two files:
-  - information.txt
-  - p_lists.txt
+  - **information.txt**
+  - **p_lists.txt**
 - ```exit``` was used to close the FTP session
 
 ### File Analysis
 - ```cat``` was used to display information in both files
-- information.txt
+- **information.txt**
   - A text file greeting the user "Robin" and informing them of their password "weekness" and their request
-  to choose a password from p_lists.txt
-- p_lists.txt
+  to choose a password from ```p_lists.txt```
+- **p_lists.txt**
   - A text file with numerous passwords
 
 ### SSH Bruteforce
-- Knowing the username "Robin" Hydra was used to obtain the password through bruteforcing through the p_lists.txt
+- Knowing the username "Robin" Hydra was used to obtain the password through bruteforcing through the ```p_lists.txt```
 ```hydra -l robin -P p_lists.txt ssh://192.168.56.101```
-- The resulting password was successfully found: k4rv3ndh4nh4ck3r
+- The resulting password was successfully found: ```k4rv3ndh4nh4ck3r```
 
 ## 4. Escalating Privileges: From Robin to Jerry
 - An SSH connection was made with ```ssh robin@192.168.56.105``` where a login was made with the password obtained above for 'robin'
@@ -87,7 +87,7 @@ a ```/bin/bash``` injection into subsequent prompt asking for 'feedback about th
 - To exploit docker and escalate privileges further the command ```docker run -v /:/mnt --rm -it alpine chroot /mnt sh``` was used which allowed us root shell on the host machine
 - Finally, we changed the directory to root with ```cd /root``` and used ``ls`` to view files/directories that revealed the a ```root.txt``` file
 - Running ```cat root.txt``` revealed the final flag:
-  - Fl4g{r00t-H4ckTh3P14n3t0nc34g41n}
+  - ```Fl4g{r00t-H4ckTh3P14n3t0nc34g41n}```
 
 
 
