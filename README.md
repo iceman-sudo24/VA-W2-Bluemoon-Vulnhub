@@ -13,5 +13,5 @@ Personal Note: This apparently only works with VirtualBox; couldn't find the Blu
 - The Attacker's Machine IP was identified with the command
 ```bash
 ifconfig
-
+```
 
