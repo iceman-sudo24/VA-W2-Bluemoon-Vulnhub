@@ -11,7 +11,7 @@ Personal Note: This apparently only works with VirtualBox; couldn't find the Blu
 
 ## 1. Recon: Network Discovery
 - The Attacker's Machine IP was identified with the command
-'''bash
+```bash
 ifconfig
-'''
+
 
