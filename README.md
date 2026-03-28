@@ -50,8 +50,8 @@ gobuster dir -u http://<IP> -w /usr/share/wordlists/dirb/common.txt
 ```bash
 ftp 192.168.56.101
 ```
-- Where the logins were used to successfully enter
-- >ls was used to check the file system that revealed two files:
+- Where the login credentials were used to successfully enter the system
+- ```ls``` was used to check the file system that revealed two files:
   - information.txt
   - p_lists.txt
 
